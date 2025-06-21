@@ -14,6 +14,40 @@ A Neovim plugin that integrates with [quests.cr](https://github.com/baltavay/que
 
 You need to have [quests.cr](https://github.com/baltavay/quests.cr) installed and available in your PATH.
 
+### Installing quests.cr
+
+1. **Install Crystal** (if not already installed):
+   ```bash
+   # Ubuntu/Debian
+   curl -fsSL https://crystal-lang.org/install.sh | sudo bash
+   
+   # macOS
+   brew install crystal
+   
+   # Arch Linux
+   sudo pacman -S crystal
+   ```
+
+2. **Clone and build quests.cr**:
+   ```bash
+   git clone https://github.com/baltavay/quests.cr.git
+   cd quests.cr
+   shards install
+   crystal build src/quests.cr --release
+   ```
+
+3. **Install to PATH**:
+   ```bash
+   sudo cp quests /usr/local/bin/
+   # or
+   cp quests ~/.local/bin/  # make sure ~/.local/bin is in your PATH
+   ```
+
+4. **Verify installation**:
+   ```bash
+   quests --version
+   ```
+
 ## Installation
 
 ### LazyVim
@@ -22,7 +56,7 @@ Add to your LazyVim configuration:
 
 ```lua
 {
-  "your-username/quests.nvim",
+  "baltavay/quests.nvim",
   cmd = { "Quests", "QuestsDaily", "QuestsClose" },
   keys = {
     { "<leader>q", "<cmd>Quests<cr>", desc = "Open Quests" },
@@ -37,7 +71,7 @@ Add to your LazyVim configuration:
 #### lazy.nvim
 ```lua
 {
-  "your-username/quests.nvim",
+  "baltavay/quests.nvim",
   cmd = { "Quests", "QuestsDaily", "QuestsClose" },
 }
 ```
@@ -45,7 +79,7 @@ Add to your LazyVim configuration:
 #### packer.nvim
 ```lua
 use {
-  "your-username/quests.nvim",
+  "baltavay/quests.nvim",
   cmd = { "Quests", "QuestsDaily", "QuestsClose" }
 }
 ```
