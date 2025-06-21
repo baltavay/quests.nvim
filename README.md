@@ -44,7 +44,7 @@ Add to your LazyVim configuration:
   "baltavay/quests.nvim",
   cmd = { "Quests", "QuestsDaily" },
   keys = {
-    { "<leader>t", "<cmd>Quests<cr>", desc = "Open Quests" },
+    { "<leader>tt", "<cmd>Quests<cr>", desc = "Open Quests" },
     { "<leader>td", "<cmd>QuestsDaily<cr>", desc = "Open Daily Quests" },
   },
 }
