@@ -13,12 +13,7 @@ vim.api.nvim_create_user_command('QuestsDaily', function()
   quests.open_daily()
 end, {})
 
-vim.api.nvim_create_user_command('QuestsClose', function()
-  quests.close()
-end, {})
-
 if not vim.g.quests_no_default_keymaps then
-  vim.keymap.set('n', '<leader>q', function() quests.open() end, { desc = 'Open Quests' })
-  vim.keymap.set('n', '<leader>qd', function() quests.open_daily() end, { desc = 'Open Daily Quests' })
-  vim.keymap.set('n', '<leader>qc', function() quests.close() end, { desc = 'Close Quests' })
+  vim.keymap.set('n', '<leader>t', function() quests.open() end, { desc = 'Open Quests' })
+  vim.keymap.set('n', '<leader>td', function() quests.open_daily() end, { desc = 'Open Daily Quests' })
 end

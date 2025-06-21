@@ -16,37 +16,22 @@ You need to have [quests.cr](https://github.com/baltavay/quests.cr) installed an
 
 ### Installing quests.cr
 
-1. **Install Crystal** (if not already installed):
-   ```bash
-   # Ubuntu/Debian
-   curl -fsSL https://crystal-lang.org/install.sh | sudo bash
-   
-   # macOS
-   brew install crystal
-   
-   # Arch Linux
-   sudo pacman -S crystal
-   ```
+**Quick Install (Recommended):**
+```bash
+git clone https://github.com/baltavay/quests.cr
+cd quests.cr
+make setup-ubuntu && make build && make install
+```
 
-2. **Clone and build quests.cr**:
-   ```bash
-   git clone https://github.com/baltavay/quests.cr.git
-   cd quests.cr
-   shards install
-   crystal build src/quests.cr --release
-   ```
+For other platforms, replace `setup-ubuntu` with:
+- `setup-fedora` (Fedora/RHEL)
+- `setup-arch` (Arch Linux)  
+- `setup-macos` (macOS)
 
-3. **Install to PATH**:
-   ```bash
-   sudo cp quests /usr/local/bin/
-   # or
-   cp quests ~/.local/bin/  # make sure ~/.local/bin is in your PATH
-   ```
-
-4. **Verify installation**:
-   ```bash
-   quests --version
-   ```
+**Verify installation:**
+```bash
+quests --version
+```
 
 ## Installation
 
@@ -57,11 +42,10 @@ Add to your LazyVim configuration:
 ```lua
 {
   "baltavay/quests.nvim",
-  cmd = { "Quests", "QuestsDaily", "QuestsClose" },
+  cmd = { "Quests", "QuestsDaily" },
   keys = {
-    { "<leader>q", "<cmd>Quests<cr>", desc = "Open Quests" },
-    { "<leader>qd", "<cmd>QuestsDaily<cr>", desc = "Open Daily Quests" },
-    { "<leader>qc", "<cmd>QuestsClose<cr>", desc = "Close Quests" },
+    { "<leader>t", "<cmd>Quests<cr>", desc = "Open Quests" },
+    { "<leader>td", "<cmd>QuestsDaily<cr>", desc = "Open Daily Quests" },
   },
 }
 ```
@@ -72,7 +56,7 @@ Add to your LazyVim configuration:
 ```lua
 {
   "baltavay/quests.nvim",
-  cmd = { "Quests", "QuestsDaily", "QuestsClose" },
+  cmd = { "Quests", "QuestsDaily" },
 }
 ```
 
@@ -80,7 +64,7 @@ Add to your LazyVim configuration:
 ```lua
 use {
   "baltavay/quests.nvim",
-  cmd = { "Quests", "QuestsDaily", "QuestsClose" }
+  cmd = { "Quests", "QuestsDaily" }
 }
 ```
 
@@ -90,13 +74,11 @@ use {
 
 - `:Quests` - Open the quests application
 - `:QuestsDaily` - Open quests in daily mode
-- `:QuestsClose` - Close the quests window
 
 ### Default Keybindings
 
-- `<leader>q` - Open quests
-- `<leader>qd` - Open daily quests
-- `<leader>qc` - Close quests
+- `<leader>t` - Open quests
+- `<leader>td` - Open daily quests
 
 ### Window Controls
 
